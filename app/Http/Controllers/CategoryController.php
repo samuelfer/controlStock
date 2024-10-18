@@ -39,7 +39,7 @@ class CategoryController extends Controller
             $data['icone'] = $iconNome;
         }
         Category::create($data);
-        return redirect()->route('categories.view')->with('success', 'Categoria criado com sucesso!');
+        return redirect()->route('categories.view')->with('success', 'Categoria criada com sucesso!');
     }
 
     /**
