@@ -338,10 +338,27 @@ return [
             'label_color' => 'success',
             'can'         => 'products.view'
         ],
+        ['header' => 'Movimentações'],
+        [
+            'text'    => 'Movimentações',
+            'submenu' => [
+                [
+                    'text' => 'Entradas',
+                    'route'=> 'users.view',
+                    'icon' => 'fa fa-plus-square',
+                    'can'  => 'users.view'
+                ],
+                [
+                    'text' => 'Saídas',
+                    'route'  => 'roles.view',
+                    'icon' => 'fa fa-minus-square',
+                    'can'  => 'roles.view'
+                ],
+            ],
+        ],
         ['header' => 'Configurações'],
         [
             'text'    => 'Administração',
-            'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
                     'text' => 'Usuários',
@@ -352,11 +369,11 @@ return [
                 [
                     'text' => 'Perfis',
                     'route'  => 'roles.view',
-                    'icon' => 'fas fa-edit',
+                    'icon' => 'fas fa-fw fa-edit',
                     'can'  => 'roles.view'
                 ],
                 [
-                    'text' => 'Permissoes',
+                    'text' => 'Permissões',
                     'route'  => 'permissions.view',
                     'icon' => 'fas fa-fw fa-lock',
                     'can'  => 'permissions.view'
