@@ -27,6 +27,31 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
  Route::middleware(['auth', 'access.control.list'])->group(function(){
 
+    Route::get('/categorias', [App\Http\Controllers\CategoryController::class, 'index'])->name('categories.view');
+    Route::get('/categorias/cadastro', [App\Http\Controllers\CategoryController::class, 'create'])->name('categories.create');
+    Route::get('/categorias/{id}', [App\Http\Controllers\CategoryController::class, 'edit'])->name('categories.edit');
+    Route::post('/categorias', [App\Http\Controllers\CategoryController::class, 'store'])->name('categories.store');
+    Route::put('/categorias/{id}', [App\Http\Controllers\CategoryController::class, 'update'])->name('categories.update');
+    Route::delete('/categorias/{id}', [App\Http\Controllers\CategoryController::class, 'destroy'])->name('categories.delete');
+
+    Route::get('/fornecedores', [App\Http\Controllers\SupplierController::class, 'index'])->name('suppliers.view');
+    Route::get('/fornecedores/cadastro', [App\Http\Controllers\SupplierController::class, 'create'])->name('suppliers.create');
+    Route::get('/fornecedores/{id}', [App\Http\Controllers\SupplierController::class, 'edit'])->name('suppliers.edit');
+    Route::post('/fornecedores', [App\Http\Controllers\SupplierController::class, 'store'])->name('suppliers.store');
+    Route::put('/fornecedores/{id}', [App\Http\Controllers\SupplierController::class, 'update'])->name('suppliers.update');
+    Route::delete('/fornecedores/{id}', [App\Http\Controllers\SupplierController::class, 'destroy'])->name('suppliers.delete');
+
+    Route::get('/produtos', [App\Http\Controllers\ProdutoController::class, 'index'])->name('products.view');
+    Route::get('/produtos/cadastro', [App\Http\Controllers\ProdutoController::class, 'create'])->name('products.create');
+    Route::get('/produtos/{id}', [App\Http\Controllers\ProdutoController::class, 'edit'])->name('products.edit');
+    Route::post('/produtos', [App\Http\Controllers\ProdutoController::class, 'store'])->name('products.store');
+    Route::put('/produtos/{id}', [App\Http\Controllers\ProdutoController::class, 'update'])->name('products.update');
+    Route::delete('/produtos/{id}', [App\Http\Controllers\ProdutoController::class, 'destroy'])->name('products.delete');
+
+
+
+   ############# SEGURANCA ########################################
+
     ############## PERMISSOES ###############
     Route::get('/permissoes', [App\Http\Controllers\Admin\PermissionController::class, 'index'])->name('permissions.view');
     Route::get('/permissoes/cadastro', [App\Http\Controllers\Admin\PermissionController::class, 'create'])->name('permissions.create');

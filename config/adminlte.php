@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Base ACL',
+    'title' => 'ControlStock',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>SIS-</b>ACL',
+    'logo' => '<b>SIS-</b>Stock',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -316,6 +316,27 @@ return [
             'url'         => '/home',
             'icon'        => 'far fa-fw fa-file',
             'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Categorias',
+            'url'         => '/categorias',
+            'icon'        => 'far fas fa-table',
+            'label_color' => 'success',
+            'can'         => 'categories.view'
+        ],
+        [
+            'text'        => 'Fornecedores',
+            'url'         => '/fornecedores',
+            'icon'        => 'far fas fa-users',
+            'label_color' => 'success',
+            'can'         => 'suppliers.view'
+        ],
+        [
+            'text'        => 'Produtos',
+            'url'         => '/produtos',
+            'icon'        => 'far fas fa-cart-plus',
+            'label_color' => 'success',
+            'can'         => 'products.view'
         ],
         ['header' => 'Configurações'],
         [
